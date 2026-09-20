@@ -1,0 +1,54 @@
+{
+  "course": {
+    "identity": { "title": "Community Health Volunteer Prenatal Checkup Program" },
+    "claim": "Volunteer can independently conduct a standard prenatal home-visit checkup and correctly flag when a case needs referral to a clinic.",
+    "non_claims": "Does not authorize the volunteer to diagnose, prescribe, or treat any complication directly."
+  },
+  "live_problem": {
+    "situation": "Rural households often skip prenatal checkups until a complication is already advanced, because the nearest clinic requires a half-day trip.",
+    "purpose": "A volunteer can catch warning signs early, at the household, before a trip to the clinic becomes urgent."
+  },
+  "learner": {
+    "prior_knowledge": "Volunteers are literate community members with no formal medical training; some have informal caregiving experience.",
+    "barriers": "Cannot travel to a central training site often; program must run mostly in-field, over several weeks, with a supervising nurse present periodically."
+  },
+  "framing": {
+    "working_words": [
+      { "term": "checklist-against-threshold, not how-she-looks", "opens": ["a checkup is a fixed checklist against a threshold, not a judgment call about how the mother 'looks'"], "changed_questions": ["does this specific reading cross the referral threshold?"] }
+    ]
+  },
+  "routes": [
+    {
+      "question": "Does this reading cross a published referral threshold?",
+      "domain": "community_prenatal_care",
+      "tool_function": "standard_checkup_checklist_and_vitals",
+      "workflow": "take_vitals -> compare_to_referral_thresholds -> log_visit -> refer_if_flagged",
+      "criteria": "every threshold on the checklist is checked and compared, referral triggered if any is crossed",
+      "skill": "vitals_measurement_and_threshold_comparison"
+    }
+  ],
+  "capability": {
+    "overall": "Volunteer can complete a full prenatal home-visit checklist and correctly decide refer-or-continue.",
+    "human_return": "With the supervising nurse absent, volunteer completes a real household visit and makes a correct refer-or-continue call against the published thresholds."
+  },
+  "content": {
+    "must_know": "Every threshold on the referral checklist and what crossing it means.",
+    "must_do": "Perform a full real household visit and complete the checklist."
+  },
+  "sessions": [
+    { "id": "F1", "minutes": 180, "capability_target": "checklist_completion_supervised", "learner_action": "Volunteer conducts 2 household visits with the nurse observing but not intervening.", "artifact": "2 completed checklists", "evidence": "2/2 checklists fully completed with correct threshold comparisons, nurse confirms no missed flags" },
+    { "id": "F4", "minutes": 180, "capability_target": "checklist_completion_unsupervised", "learner_action": "Volunteer conducts a real household visit alone; nurse reviews the completed checklist afterward, not during.", "artifact": "1 completed checklist reviewed post-hoc", "evidence": "checklist matches nurse's independent post-hoc review, no missed referral flags" }
+  ],
+  "assessment": {
+    "claim": "Volunteer can independently complete a prenatal checkup and correctly decide refer-or-continue.",
+    "task": "Conduct a real, unsupervised household visit and complete the checklist.",
+    "observation": "Whether every threshold was checked, and whether the refer-or-continue decision matches the nurse's independent post-hoc review of the same readings.",
+    "criteria": "All checklist items completed; refer-or-continue decision matches nurse's review with zero missed referral flags.",
+    "warrant": "A missed referral flag is the exact failure this program exists to prevent, so nurse-agreement on referral decisions is the load-bearing evidence, not checklist completion alone.",
+    "assistance_condition": "unassisted during the visit; nurse review happens only afterward, not during"
+  },
+  "support": {
+    "closure_pack": ["laminated referral-threshold checklist", "phone contact for the supervising nurse"],
+    "single_return_if_needed": true
+  }
+}

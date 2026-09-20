@@ -1,0 +1,54 @@
+{
+  "course": {
+    "identity": { "title": "Weekly Bookkeeping Habit for Micro-Business Owners" },
+    "claim": "Owner can close out a week's cash-in/cash-out ledger in under 20 minutes without an accountant.",
+    "non_claims": "Does not cover tax filing, payroll, or formal audited statements."
+  },
+  "live_problem": {
+    "situation": "Owners track sales on scraps of paper or memory and discover cash shortfalls months later with no way to trace them.",
+    "purpose": "Owner closes a simple weekly ledger routinely enough that a shortfall is caught within the week it happens."
+  },
+  "learner": {
+    "prior_knowledge": "Comfortable with a smartphone; has never used a ledger app or spreadsheet for the business.",
+    "barriers": "No spare weekday time; must be fully async, self-paced, spread over several weeks to become a habit, not a one-off lesson."
+  },
+  "framing": {
+    "working_words": [
+      { "term": "weekly close, not year-end reconstruction", "opens": ["a shortfall found in week 1 is fixable; one found in month 11 is not"] }
+    ]
+  },
+  "routes": [
+    {
+      "question": "Does cash-on-hand match the ledger's running balance at week's end?",
+      "domain": "micro_business_bookkeeping",
+      "tool_function": "ledger_app_weekly_close",
+      "workflow": "enter_transactions -> compute_running_balance -> count_cash_on_hand -> compare -> flag_if_mismatch",
+      "criteria": "reconciled balance matches counted cash within a small stated tolerance",
+      "skill": "transaction_entry_and_reconciliation"
+    }
+  ],
+  "capability": {
+    "overall": "Owner can close a weekly cash ledger and spot a shortfall the same week it occurs.",
+    "human_return": "Given a week of real transactions, owner enters them and reconciles cash-on-hand within 20 minutes without help."
+  },
+  "content": {
+    "must_know": "The three ledger fields (in, out, running balance) and where cash-on-hand should match.",
+    "must_do": "Actually enter one real week of transactions and reconcile."
+  },
+  "sessions": [
+    { "id": "W1", "minutes": 15, "capability_target": "enter_transactions_daily", "learner_action": "Owner logs each real sale/expense into the app as it happens for one week.", "artifact": "one week of logged transactions", "evidence": "7/7 days have at least one logged entry" },
+    { "id": "W4", "minutes": 20, "capability_target": "weekly_close_and_reconcile", "learner_action": "Owner closes the week's ledger and counts physical cash-on-hand to compare.", "artifact": "closed weekly ledger with reconciliation note", "evidence": "balance reconciled within stated tolerance, unassisted, in under 20 minutes" }
+  ],
+  "assessment": {
+    "claim": "Owner can independently close a weekly ledger.",
+    "task": "Close out one real week of transactions in the ledger app.",
+    "observation": "Time taken and whether the reconciled balance matches actual cash-on-hand.",
+    "criteria": "Closed within 20 minutes, balance matches cash-on-hand within a small tolerance.",
+    "warrant": "A real week closed correctly and on time is the exact behavior this course exists to build into a habit.",
+    "assistance_condition": "unassisted, after the 4-week async sequence"
+  },
+  "support": {
+    "closure_pack": ["ledger app quick-start card", "4-week habit checklist"],
+    "single_return_if_needed": false
+  }
+}

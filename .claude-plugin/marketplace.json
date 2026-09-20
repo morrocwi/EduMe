@@ -1,0 +1,10 @@
+{
+  "name": "edume-upcc",
+  "owner": "morrocwi",
+  "plugins": [
+    {
+      "name": "upcc-curriculum-designer",
+      "description": "Design a UPCC-based course curriculum from a live-problem description, minimal-token, with an optional MCP server for validation/rendering."
+    }
+  ]
+}

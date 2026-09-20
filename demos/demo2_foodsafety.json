@@ -1,0 +1,53 @@
+{
+  "course": {
+    "identity": { "title": "Sell-or-Hold: Batch Safety Decision Workshop" },
+    "claim": "Vendors can decide, unassisted, whether today's fermented-sauce batch is safe to sell using a pH reading against a published threshold.",
+    "non_claims": "Does not certify food-handling licensure, does not cover recall procedures, does not replace regulatory inspection."
+  },
+  "live_problem": {
+    "situation": "Street-food vendors currently decide batch safety by taste and smell, which has caused at least two spoilage incidents this quarter.",
+    "purpose": "Vendor faces the same daily decision but now backs it with a numeric reading instead of gut feel."
+  },
+  "learner": {
+    "prior_knowledge": "Vendors have run their stalls for years; no prior exposure to pH meters or numeric thresholds.",
+    "barriers": "Low literacy with technical instruments; workshop must be entirely hands-on, spoken, in-person — no reading-heavy materials."
+  },
+  "framing": {
+    "working_words": [
+      { "term": "safe-range reading, not gut-feel taste-test", "opens": ["what does 'safe enough' actually mean numerically?"], "changed_questions": ["what threshold am I comparing this reading to?"] }
+    ]
+  },
+  "routes": [
+    {
+      "question": "Is this batch inside the published safe pH range for this product category?",
+      "domain": "food_safety",
+      "tool_function": "pH_meter_reading",
+      "workflow": "measure -> compare_to_threshold_card -> log_batch -> decide_sell_or_hold",
+      "criteria": "reading falls inside the published safe range printed on the threshold card",
+      "skill": "basic_meter_use_and_threshold_lookup"
+    }
+  ],
+  "capability": {
+    "overall": "Vendor can take a pH reading and correctly classify a batch as sell or hold.",
+    "human_return": "Given a real batch sample with no coach present, vendor takes the reading, checks it against the threshold card, and states sell or hold correctly."
+  },
+  "content": {
+    "must_know": "Where the safe range is on the threshold card for their product.",
+    "must_do": "Physically take a pH reading with the meter on a real sample."
+  },
+  "sessions": [
+    { "id": "S1", "minutes": 90, "capability_target": "run_one_pH_reading_and_decide", "learner_action": "Vendor measures 3 real batch samples with the meter and logs each against the threshold card.", "artifact": "filled batch log sheet", "evidence": "3/3 readings correctly classified sell-or-hold by the vendor unassisted" }
+  ],
+  "assessment": {
+    "claim": "Vendor can independently classify a batch as sell or hold from a pH reading.",
+    "task": "Take a pH reading on a real, previously-unseen batch sample and state sell or hold.",
+    "observation": "Whether the stated decision matches the threshold-card classification for the measured value.",
+    "criteria": "Correct sell/hold call on the unseen sample, reading taken without coach intervention.",
+    "warrant": "A correct call on an unseen real sample is the actual daily task this course exists to fix — no proxy task substitutes for it.",
+    "assistance_condition": "unassisted, coach present only to observe and not intervene"
+  },
+  "support": {
+    "closure_pack": ["laminated threshold card", "meter borrowed for first week of independent use"],
+    "single_return_if_needed": true
+  }
+}

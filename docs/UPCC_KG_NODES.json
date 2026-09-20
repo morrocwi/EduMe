@@ -1,0 +1,144 @@
+{
+  "nodes": [
+    {
+      "id": "legacy-upcc-protocol",
+      "class": "lineage-track",
+      "role": "Superseded original equation-track (v0.1→v0.4) that invented an independent UPCC-* equation namespace, then progressively retracted it in favor of reusing existing Toledo HCA-river objects directly.",
+      "is": [
+        "the historical precursor whose progressive self-retraction (v0.1→v0.4) established the REUSE/CURRICULUM SPECIALIZATION/IMPLEMENTATION INVARIANT/PROPOSAL/OPEN taxonomy that Master v1.3 still uses",
+        "the exact failure mode EPIS-REUSE-PIPELINE now exists to prevent, reinvented and then walked back before that standing rule existed"
+      ],
+      "is_not": [
+        "current or authoritative for any live UPCC decision",
+        "referenced anywhere in the v2.0 institute schema extract — v2.0 shows no awareness of, and does not repeat, the legacy UPCC-* namespace mistake"
+      ],
+      "relations": [
+        {
+          "type": "superseded-by",
+          "target": "upcc-master-architecture"
+        },
+        {
+          "type": "cautionary-precedent-for",
+          "target": "upcc-institute-schema-v2"
+        }
+      ]
+    },
+    {
+      "id": "upcc-master-architecture",
+      "class": "current-layer",
+      "role": "Layer 1 — standalone curriculum-design conceptual architecture (current: v1.3), reusing the Toledo HCA river spine wholesale and proposing exactly three new PROPOSAL objects.",
+      "is": [
+        "the conceptual/architectural layer whose vocabulary (Live Problem, Working Words, Routes, Capability, Human Return, Retained Knowledge) the v2.0 institute schema explicitly inherits without redefinition",
+        "explicitly named as one of v2.0's two 'Architecture anchor' documents (alongside Production v1.3), per v2.0's own header",
+        "the source of the Curriculum Traceability Record and Scaffold Construction Record PROPOSALs that v2.0's Alignment Map and per-section scaffold records plausibly restate under new names (unconfirmed by the extract either way)"
+      ],
+      "is_not": [
+        "superseded, replaced, or extended-in-place by v2.0 — v2.0 sits downstream of it as a template/schema, not as a new version of it",
+        "confirmed to map node-for-node onto v2.0's renamed pipeline chain (Current Premise/Words → New Working Words → Changed Questions inserted as explicit stages) — that mapping is asserted by neither document"
+      ],
+      "relations": [
+        {
+          "type": "operationalized-by",
+          "target": "upcc-institute-schema-v2"
+        },
+        {
+          "type": "reuses",
+          "target": "toledo:EQ-002/H.03.v1 (CAN-098, unverified against live registry)"
+        },
+        {
+          "type": "sibling-layer-of",
+          "target": "upcc-production-system"
+        }
+      ]
+    },
+    {
+      "id": "upcc-production-system",
+      "class": "current-layer",
+      "role": "Layer 2 — buildable, tool-agnostic production/compiler manual (current: v1.3) implementing Layer 1 into an 18-node spine, 25-item output checklist, and Tool Abstraction Layer.",
+      "is": [
+        "the second of v2.0's two explicit 'Architecture anchor' documents, per v2.0's own header — v2.0's YAML/JSON schema (section 22) is stated to be the data contract this 'Production/Compiler system' consumes to emit v2.0's 17 listed AI-producible outputs",
+        "the intended consumer of v2.0's fillable template output, making v2.0 upstream input to this layer rather than a competing production spec"
+      ],
+      "is_not": [
+        "confirmed to anchor to Master v1.3 in its own text — prior extracts of Production v1.0–v1.2 cite Master v1.1; whether the current Production v1.3 itself cites Master v1.3 remains unconfirmed even though v2.0 cites both as its own anchors",
+        "identical in its 25-item output checklist to v2.0's 25 document sections without verification — the coincidence in count is unreconciled"
+      ],
+      "relations": [
+        {
+          "type": "consumes-schema-from",
+          "target": "upcc-institute-schema-v2"
+        },
+        {
+          "type": "implements",
+          "target": "upcc-master-architecture"
+        }
+      ]
+    },
+    {
+      "id": "upcc-empirical-falsification-protocol",
+      "class": "current-layer",
+      "role": "Layer 3 — standalone adversarial research-design companion (current: v0.2), introducing zero new Toledo equations, organized around a CLAIM/TASK/OBSERVATION/WARRANT chain and a six-way falsification taxonomy.",
+      "is": [
+        "the origin of a 4-field CLAIM/TASK/OBSERVATION/WARRANT chain that v2.0's Assessment section visibly extends to 6 fields (adding CRITERIA and ASSISTANCE CONDITION) for authoring-time assessment design rather than post-hoc falsification"
+      ],
+      "is_not": [
+        "confirmed to be the same record type as v2.0's 6-field Assessment chain — whether v2.0 forked this chain or is meant to be a strict superset consumed back into Layer 3's research use is unresolved by the extract",
+        "referenced anywhere by name in the v2.0 schema — the link is inferred from field-name overlap only, not stated by v2.0 itself"
+      ],
+      "relations": [
+        {
+          "type": "field-chain-extended-by",
+          "target": "upcc-institute-schema-v2"
+        },
+        {
+          "type": "still-unresolved-duplication-with",
+          "target": "upcc-master-architecture"
+        }
+      ]
+    },
+    {
+      "id": "upcc-institute-schema-v2",
+      "class": "bridge-artifact",
+      "role": "v2.0 'UPCC-Core Edition' — a fillable curriculum-design template/schema for independent (non-government-accredited) institutes, operationalizing the Master pipeline into 25 document sections plus a YAML/JSON AI-ready data schema and 17 AI-generatable outputs.",
+      "is": [
+        "an authoring-template + machine-readable data-schema layer explicitly self-anchored to both 'UPCC Master v1.3' and 'Curriculum Production System v1.3' by name in its own header",
+        "positioned downstream of/subordinate to Master (uses its concepts without redefining them) and upstream of/input-to Production (its schema is the data contract the compiler consumes)",
+        "a restatement of the HCA-river pipeline under renamed and elaborated stage labels (Current Premise/Words, New Working Words, Changed Questions promoted to explicit named stages), unreconciled node-for-node against Master's canonical stage names in the extract",
+        "an extension of Layer 3's 4-field CLAIM/TASK/OBSERVATION/WARRANT chain into a 6-field CLAIM/TASK/OBSERVATION/CRITERIA/WARRANT/ASSISTANCE-CONDITION chain, repurposed for authoring-time assessment design",
+        "free of any invented equation-code namespace — zero Toledo or Genesis citations of any kind, positive or negative, appear anywhere in it"
+      ],
+      "is_not": [
+        "a fourth independent research/theory layer parallel to Master, Production, and Empirical Falsification — it does no new foundational or empirical work of its own",
+        "verified as non-duplicative of existing PROPOSAL records — its Alignment Map (9-column table) and per-section scaffold record are plausible restatements of the existing Curriculum Traceability Record and Scaffold Construction Record PROPOSALs, but this is not confirmed either way by the extract",
+        "carrying forward Master v1.3's discipline of citing explicit Toledo parent codes for every reused node — it drops that citation practice even while reusing the underlying concepts",
+        "an artifact with any executed/observed result — like the rest of the corpus, it is a design/template, not evidence"
+      ],
+      "relations": [
+        {
+          "type": "operationalizes",
+          "target": "upcc-master-architecture"
+        },
+        {
+          "type": "feeds-schema-into",
+          "target": "upcc-production-system"
+        },
+        {
+          "type": "extends-field-chain-of",
+          "target": "upcc-empirical-falsification-protocol"
+        },
+        {
+          "type": "avoids-failure-mode-of",
+          "target": "legacy-upcc-protocol"
+        },
+        {
+          "type": "unverified-against",
+          "target": "toledo:CANONICAL.json"
+        },
+        {
+          "type": "unverified-against",
+          "target": "readout_genesis compatibility check"
+        }
+      ]
+    }
+  ]
+}

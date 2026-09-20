@@ -1,0 +1,289 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UPCC v2.0 — Spine Schema (17-field minimal legitimate design)",
+  "type": "object",
+  "required": [
+    "course",
+    "live_problem",
+    "learner",
+    "framing",
+    "routes",
+    "capability",
+    "content",
+    "sessions",
+    "assessment",
+    "support"
+  ],
+  "properties": {
+    "course": {
+      "type": "object",
+      "required": [
+        "identity",
+        "claim",
+        "non_claims"
+      ],
+      "properties": {
+        "identity": {
+          "type": "object",
+          "required": [
+            "title"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "Names the course so it can be referenced/cited. Elicit: \"One-line course name?\""
+            }
+          }
+        },
+        "claim": {
+          "type": "string",
+          "description": "States exactly what capability the course produces — the thing everything else must trace back to. Elicit: \"In 1–2 sentences: this course helps the learner do/decide what?\""
+        },
+        "non_claims": {
+          "type": "string",
+          "description": "Blocks overclaim by stating what the course does NOT produce (mandatory pairing with course.claim per §1). Elicit: \"What should this course NOT be mistaken for claiming?\""
+        }
+      }
+    },
+    "live_problem": {
+      "type": "object",
+      "required": [
+        "situation",
+        "purpose"
+      ],
+      "properties": {
+        "situation": {
+          "type": "string",
+          "description": "The real problem/change that makes this course necessary — the origin, not a topic. Elicit: \"What real situation or breakdown is happening right now?\""
+        },
+        "purpose": {
+          "type": "string",
+          "description": "The changed state the learner should return to the world with. Elicit: \"If this works, how does the learner face that same situation differently afterward?\""
+        }
+      }
+    },
+    "learner": {
+      "type": "object",
+      "required": [
+        "prior_knowledge",
+        "barriers"
+      ],
+      "properties": {
+        "prior_knowledge": {
+          "type": "string",
+          "description": "What the learner already brings — prevents content dump / re-teaching known things. Elicit: \"What do these learners already know or have done before, related to this problem?\""
+        },
+        "barriers": {
+          "type": "string",
+          "description": "What blocks them now — language, access, time, confidence, etc. Elicit: \"What's stopping them from acting on this already?\""
+        }
+      }
+    },
+    "framing": {
+      "type": "object",
+      "required": [
+        "working_words"
+      ],
+      "properties": {
+        "working_words": {
+          "type": "array",
+          "minItems": 1,
+          "description": "The new lens/term that reframes the problem into an actionable question — the schema's anti-content-dump hinge. Elicit: \"What single new term or lens would make them ask a different, more useful question about this?\"",
+          "items": {
+            "type": "object",
+            "required": [
+              "term"
+            ],
+            "properties": {
+              "term": {
+                "type": "string",
+                "description": "The new working word/lens itself."
+              },
+              "opens": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "What the term opens up (optional at spine depth)."
+              },
+              "changed_questions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Questions the term makes newly askable (optional at spine depth)."
+              },
+              "routes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Route ids this term feeds (optional at spine depth; full route objects live in top-level routes[])."
+              }
+            }
+          }
+        }
+      }
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "description": "The concrete path from the new question to a tool/workflow/skill that can answer it. Elicit: \"Given that new question, what domain/tool/workflow/skill actually answers it, and what counts as 'done right'?\"",
+      "items": {
+        "type": "object",
+        "required": [
+          "question",
+          "domain",
+          "tool_function",
+          "workflow",
+          "criteria",
+          "skill"
+        ],
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "tool_function": {
+            "type": "string"
+          },
+          "workflow": {
+            "type": "string"
+          },
+          "criteria": {
+            "type": "string"
+          },
+          "skill": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "capability": {
+      "type": "object",
+      "required": [
+        "overall",
+        "human_return"
+      ],
+      "properties": {
+        "overall": {
+          "type": "string",
+          "description": "The single outcome sentence — \"learner can now ___\". Elicit: \"One sentence: what can the learner now do that they couldn't before?\""
+        },
+        "human_return": {
+          "type": "string",
+          "description": "What the learner can do UNASSISTED — the proof the capability is theirs, not the AI's/teacher's. Elicit: \"With help removed, what specifically can they still do on their own?\""
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": [
+        "must_know",
+        "must_do"
+      ],
+      "properties": {
+        "must_know": {
+          "type": "string",
+          "description": "The irreducible knowledge needed for the capability (not \"interesting,\" needed). Elicit: \"What must they know for the route above to work at all?\""
+        },
+        "must_do": {
+          "type": "string",
+          "description": "The irreducible hands-on action — a skill needs doing it, not hearing about it. Elicit: \"What must they actually DO, not just learn about?\""
+        }
+      }
+    },
+    "sessions": {
+      "type": "array",
+      "minItems": 1,
+      "description": "At least one concrete teaching unit that produces observable evidence, not just \"covers content.\" Elicit: \"In one session, how long, targeting which capability slice, what does the learner do, and what artifact/evidence results?\"",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "minutes",
+          "capability_target",
+          "learner_action",
+          "artifact",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "minutes": {
+            "type": "integer"
+          },
+          "capability_target": {
+            "type": "string"
+          },
+          "learner_action": {
+            "type": "string"
+          },
+          "artifact": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "required": [
+        "claim",
+        "task",
+        "observation",
+        "criteria",
+        "warrant",
+        "assistance_condition"
+      ],
+      "description": "UPCC's 6-field evidence chain — stops the course from asserting a capability it never checked. Elicit: \"What will you claim they can do; what task shows it; what will you observe; what counts as enough; why does that observation support the claim; and how much help were they given while doing it?\"",
+      "properties": {
+        "claim": {
+          "type": "string"
+        },
+        "task": {
+          "type": "string"
+        },
+        "observation": {
+          "type": "string"
+        },
+        "criteria": {
+          "type": "string"
+        },
+        "warrant": {
+          "type": "string"
+        },
+        "assistance_condition": {
+          "type": "string",
+          "description": "The condition under which the task was performed (assisted vs. unassisted) — makes the 'assisted performance ≠ Human Return' discipline (§13, §15) checkable."
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "required": [
+        "closure_pack",
+        "single_return_if_needed"
+      ],
+      "properties": {
+        "closure_pack": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "description": "What the learner leaves with so the course can actually end (§19 closure discipline). Elicit: \"What must they have in hand before this course is considered closed?\""
+        },
+        "single_return_if_needed": {
+          "type": "boolean",
+          "description": "Whether one bounded follow-up touchpoint is needed — blocks open-ended, unbounded follow-up. Elicit: \"Is one later check-in needed, or is this fully self-service after closure?\""
+        }
+      }
+    }
+  }
+}
