@@ -188,6 +188,42 @@ know exactly why" — not closed, not failed, not passed.** To move any of these
 not a lookup), before the Domain/Reader-Equivalence/Sufficiency/Lineage gates can return an actual
 verdict. This is now a concrete, scoped next step rather than a vague "never checked" gap.
 
+## 3b. Formalization pushed further, honestly (2026-09-20)
+
+Following main.hub's own routing (`ROUTES.md` §equation/§ontology confirm the reuse-pipeline order
+already in use; §write-and-release states plainly: *"Maker is not checker: obtain an independent
+check before release"* — the one thing no amount of orchestration can substitute for), this session
+closed what was actually closeable in the Genesis formalization, without pretending to close what
+requires another party:
+
+- **Parent-code bug fixed**: CAN-172/174/237/249/102 had already been resolved to dotted Toledo
+  codes in the first lookup pass but weren't carried into the proposal draft — a data-carry bug,
+  now fixed in `registry/proposals/upcc_v1_0.json`.
+- **A "Real-World Capability Performance" (RWCP) domain was actually constructed** so the
+  Reader-Equivalence/Commuting-Square gate — previously un-testable for lack of a second domain —
+  could be run for real on `CURRICULUM_EVIDENCE_RECORD` and `CURRICULUM_TRACEABILITY_RECORD`. Both
+  still come back **incompatible**, for specific, named, fixable reasons (not a vague "still open"):
+  CER's `TransferDistance` is a single scalar standing in for what should be a multi-dimensional
+  sufficiency check (context-novelty, exposure, confounds); CTR has no field distinguishing "the
+  tool produced the accepted evidence" from "the person did," which is a precondition for any
+  translation into a real-world domain, not an optional nicety.
+- **`SCAFFOLD_CONSTRUCTION_RECORD` closed both its prior sufficiency failures** by genuine state
+  enlargement (two new fields, `CounterfactualArm_n` and `RetentionCheck_j`) and is now the one
+  object in this batch with no further named gap in the source material — gate-clean **pending
+  independent re-verification**, since the pass that proposed the fix also re-checked it itself,
+  which this workspace's own maker-checker discipline does not count as verified.
+- **`ROUTE_DEPENDENCY_RECORD` was deliberately left alone**, explicitly marked `hold` rather than
+  patched — its own UPCC source discloses it as an unformalized stub, and inventing an append-only
+  lineage semantics for it on its own authors' behalf would be authorship overreach, not a
+  legitimate gap-fill.
+- **What still blocks every object, including the gate-clean one**: an independent (not
+  self-authored) re-check of the sufficiency/commuting-square verdicts, a Coq artifact for each
+  enlarged state, registrar review, and a checker distinct from whoever proposed the change. None of
+  the four objects has cleared any of those yet.
+
+Full detail: `registry/proposals/upcc_v1_0.json` in the `toledo` repository (branch
+`upcc-proposal-v1`, PR open).
+
 ## 6. What's still the founder's call (not decided here)
 
 - **Repo placement.** The Institute Schema v2.0 is a bridge artifact, not a fifth independent node

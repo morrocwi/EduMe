@@ -67,8 +67,12 @@ real (add/remove a config entry, confirm clean state both ways) — see
   this workspace's own maker-checker or adversarial-review discipline.
 - **Not yet registered in Toledo's canonical registry.** Toledo PROPOSAL entries have been drafted
   and are pending registrar review — see `registry/proposals/upcc_v1_0.json` in the `toledo`
-  repository. Two of the four drafted proposals were found, by this session's own audit, to fail or
-  leave open at least one Genesis-compatibility gate as currently scoped — reported plainly there,
+  repository. Current honest status per object: `SCAFFOLD_CONSTRUCTION_RECORD` is gate-clean
+  pending *independent* re-verification (self-checked only so far); `CURRICULUM_EVIDENCE_RECORD`
+  and `CURRICULUM_TRACEABILITY_RECORD` still fail a real commuting-square check against a
+  constructed real-world domain, for specific named reasons; `ROUTE_DEPENDENCY_RECORD` is
+  deliberately held, not patched, since its lineage semantics belong to UPCC's own authors. None of
+  the four has a Coq artifact, a registrar review, or an independent checker yet — reported plainly,
   not smoothed over.
 - **No Readout Genesis compatibility certification** exists beyond this session's own Dr-tier
   formalization attempt; the honest result for every new object is "open, not closed."
