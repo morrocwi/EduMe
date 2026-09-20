@@ -1,0 +1,64 @@
+{
+  "course": {
+    "identity": { "title": "Ticketing System Quick-Start for New Hires" },
+    "claim": "New hires can log, route, and close a support ticket correctly on their first day without a supervisor watching.",
+    "non_claims": "Does not certify advanced ticket triage, SLA management, or escalation authority."
+  },
+  "live_problem": {
+    "situation": "New hires open tickets in the wrong queue, skip required fields, and escalate issues that should be self-resolved, creating rework for senior staff.",
+    "purpose": "A new hire can independently create a correctly-routed, correctly-tagged ticket within their first shift."
+  },
+  "learner": {
+    "prior_knowledge": "Comfortable with basic web forms; no prior exposure to this specific ticketing tool or the team's queue structure.",
+    "barriers": "No time for a multi-day onboarding course; must be usable async, on day one, in under 2 hours."
+  },
+  "framing": {
+    "working_words": [
+      {
+        "term": "queue-fit, not urgency-fit",
+        "opens": ["a ticket is routed by WHO owns the fix, not by how urgent it feels"],
+        "changed_questions": ["which team actually owns this class of problem?"]
+      }
+    ]
+  },
+  "routes": [
+    {
+      "question": "Which queue does this ticket belong in?",
+      "domain": "internal_support_ops",
+      "tool_function": "ticketing_system_queue_picker",
+      "workflow": "read_symptom -> match_to_queue_table -> select_queue -> fill_required_fields -> submit",
+      "criteria": "ticket lands in the queue matching the published symptom-to-queue table",
+      "skill": "queue_table_lookup_and_field_completion"
+    }
+  ],
+  "capability": {
+    "overall": "New hire can create a correctly-routed, correctly-tagged ticket unassisted.",
+    "human_return": "Given a new, unseen symptom description, the hire selects the right queue from the table and fills all required fields without asking a colleague."
+  },
+  "content": {
+    "must_know": "The symptom-to-queue table; the required fields for a valid ticket.",
+    "must_do": "Create at least one real or simulated ticket end-to-end."
+  },
+  "sessions": [
+    {
+      "id": "S1",
+      "minutes": 90,
+      "capability_target": "queue_selection_and_field_completion",
+      "learner_action": "Given 3 sample symptom descriptions, the learner creates 3 tickets in a sandbox instance.",
+      "artifact": "3 completed sandbox tickets",
+      "evidence": "3/3 tickets land in the correct queue with all required fields filled"
+    }
+  ],
+  "assessment": {
+    "claim": "Learner can independently create a correctly-routed ticket.",
+    "task": "Create a ticket from a new, unseen symptom description in the sandbox instance.",
+    "observation": "Which queue the ticket lands in; which required fields are filled.",
+    "criteria": "Ticket lands in the queue matching the published symptom-to-queue table AND all required fields are non-empty.",
+    "warrant": "Correct queue + complete fields on an unseen symptom is the operational definition of 'can independently create a correctly-routed ticket' for this role — there is no additional real-world task this course claims to prepare for.",
+    "assistance_condition": "unassisted — no supervisor or reference material beyond the closure-pack quick-reference card, which is allowed since it ships with the role permanently."
+  },
+  "support": {
+    "closure_pack": ["symptom-to-queue quick-reference card", "link to sandbox instance for future practice"],
+    "single_return_if_needed": true
+  }
+}

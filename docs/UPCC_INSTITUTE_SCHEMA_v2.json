@@ -1,0 +1,239 @@
+{
+  "schema_version": "2.0",
+  "architecture": "UPCC Core",
+  "status": "independent_institute_guideline",
+  "course": {
+    "identity": {
+      "title": "",
+      "english_title": "",
+      "type": "",
+      "target_group": "",
+      "duration_minutes": null,
+      "modality": [],
+      "language": [],
+      "version": ""
+    },
+    "claim": "",
+    "non_claims": []
+  },
+  "live_problem": {
+    "situation": "",
+    "people": [],
+    "context": "",
+    "consequences": [],
+    "why_current_approach_is_insufficient": "",
+    "purpose": "",
+    "scope": [],
+    "referral_boundaries": []
+  },
+  "learner": {
+    "prior_knowledge": [],
+    "experiential_capital": {
+      "observed": [],
+      "tried": [],
+      "failures": [],
+      "partial_successes": [],
+      "tacit_distinctions": [],
+      "consequences": []
+    },
+    "context_injection": {
+      "observed_vs_inferred": [],
+      "constraints": [],
+      "people_rights_power_permissions": [],
+      "unknowns": []
+    },
+    "barriers": [],
+    "language_accessibility": [],
+    "learner_choices": []
+  },
+  "framing": {
+    "current_premises": [],
+    "facts_to_preserve": [],
+    "current_words": [],
+    "working_words": [
+      {
+        "term": "",
+        "opens": [],
+        "changed_questions": [],
+        "routes": [],
+        "risks": []
+      }
+    ]
+  },
+  "routes": [
+    {
+      "question": "",
+      "domain": "",
+      "tool_function": "",
+      "workflow": "",
+      "criteria": [],
+      "skill": "",
+      "role": "",
+      "boundary": "",
+      "selected": true,
+      "rationale": ""
+    }
+  ],
+  "capability": {
+    "overall": "",
+    "knowledge": [],
+    "skills": [],
+    "judgment_ethics": [],
+    "agency": [],
+    "human_return": [],
+    "transfer": [],
+    "boundaries": []
+  },
+  "operational_language": {
+    "problem_junction_terms": [],
+    "tool_terms": [],
+    "workflow_terms": [],
+    "criteria_evidence_failure_terms": [],
+    "skill_role_terms": [],
+    "boundary_permission_referral_terms": []
+  },
+  "content": {
+    "must_know": [],
+    "must_do": [],
+    "must_check": [],
+    "good_to_know": [],
+    "defer": [],
+    "do_not_teach_now": []
+  },
+  "tools": [
+    {
+      "function": "",
+      "educational_goal": "",
+      "required_capabilities": [],
+      "input": [],
+      "output": [],
+      "learner_action": [],
+      "evidence": [],
+      "limitations": [],
+      "substitution_criteria": [],
+      "current_examples": []
+    }
+  ],
+  "sessions": [
+    {
+      "id": "",
+      "minutes": null,
+      "modality": "",
+      "capability_target": "",
+      "live_problem_link": "",
+      "working_words": [],
+      "operational_language": [],
+      "learner_action": [],
+      "teacher_role": [],
+      "tool_function": [],
+      "workflow": [],
+      "criteria": [],
+      "artifact": [],
+      "evidence": [],
+      "assistance_level": "",
+      "activity_demand": {
+        "cognitive": "",
+        "literacy": "",
+        "stillness": "",
+        "movement_opportunity": "",
+        "social": "",
+        "decision_density": "",
+        "novelty": "",
+        "verification": ""
+      },
+      "rhythm_options": [],
+      "next_dependency": ""
+    }
+  ],
+  "practice": {
+    "modeling": [],
+    "coaching": [],
+    "scaffolding": [],
+    "reattempt": [],
+    "fading": [],
+    "reduced_support": []
+  },
+  "verification": {
+    "confirm_challenge_gate": true,
+    "claims": [
+      {
+        "claim": "",
+        "check_method": "",
+        "source_or_method": "",
+        "result": "",
+        "revision": ""
+      }
+    ]
+  },
+  "assessment": [
+    {
+      "outcome": "",
+      "claim": "",
+      "task": "",
+      "observation": [],
+      "criteria": [],
+      "warrant": "",
+      "assistance_condition": ""
+    }
+  ],
+  "human_return": {
+    "task": "",
+    "changed_conditions": [],
+    "decisive_support_removed": [],
+    "observations": [],
+    "boundaries": [],
+    "result": ""
+  },
+  "transfer": {
+    "task": "",
+    "changed_context": [],
+    "evidence": []
+  },
+  "world_feedback": {
+    "source": [],
+    "resistance": [],
+    "revision": []
+  },
+  "retained_knowledge": {
+    "supported_knowledge": [],
+    "can_do": [],
+    "conditions_of_use": [],
+    "how_to_check": [],
+    "limits": [],
+    "referral": [],
+    "next_action": []
+  },
+  "support": {
+    "before": [],
+    "during": [],
+    "closure_pack": [],
+    "single_return_if_needed": false,
+    "on_demand_after": true
+  },
+  "quality": {
+    "alignment_map": [],
+    "sources": [],
+    "known_gaps": [],
+    "claim_strength_check": true,
+    "human_review": true
+  },
+  "ai_outputs": [
+    "curriculum_design_paper",
+    "executive_course_summary",
+    "public_course_description",
+    "detailed_syllabus",
+    "session_plan",
+    "async_media_plan",
+    "teacher_guide",
+    "learner_workbook_structure",
+    "operational_language_list",
+    "tool_workflow_map",
+    "practice_scaffold_plan",
+    "assessment_plan",
+    "human_return_task",
+    "alignment_matrix",
+    "support_closure_plan",
+    "source_pack_specification",
+    "quality_review"
+  ]
+}
