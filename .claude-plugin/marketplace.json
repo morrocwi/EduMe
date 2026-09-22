@@ -1,9 +1,16 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "edume-upcc",
-  "owner": "morrocwi",
+  "owner": {
+    "name": "morrocwi"
+  },
+  "metadata": {
+    "description": "Marketplace for the EduMe UPCC curriculum-design plugin — turn a live-problem description into a validated, rendered Design Curriculum Document."
+  },
   "plugins": [
     {
       "name": "upcc-curriculum-designer",
+      "source": "./plugins/upcc-curriculum-designer",
       "description": "Design a UPCC-based course curriculum from a live-problem description, minimal-token, with an optional MCP server for validation/rendering."
     }
   ]
