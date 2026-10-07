@@ -521,9 +521,37 @@ A route that opens a real tool but deletes a critical fact is a routing failure.
 
 # 8. The Toledo Spine
 
+## REUSE — `EQ-002/H.07.v1`, CAN-1318, Definition — synchronous videoconference delivery weld
+
+When the selected delivery modality is `ONLINE_SYNCHRONOUS` group videoconference, UPCC first
+uses the registered Toledo domain weld:
+
+```text
+Z^Zoom
+→ Barrier Readout
+→ Diagnostic Probe
+→ Candidate Routes
+→ Human Endorsement
+→ Scaffold
+→ Unaided Human Return
+→ Return Conversion
+→ Live Possibility
+→ Realized Opportunity
+→ Net Advancement
+```
+
+Canonical code: **`EQ-002/H.07.v1` / `CAN-1318`**.
+
+The full delivery-domain state, measurement, fatigue, observation, transportability, and
+validation specification is:
+`docs/TOLEDO_ZOOM_GLOBAL_FINAL_STANDALONE_v1_4_EDUME_LINKED.md`.
+
+This is a **delivery-domain weld**, not a replacement for the HCA river. For non-synchronous
+modalities, do not force Zoom variables into the curriculum model.
+
 ## REUSE — `EQ-002/H.03.v1`, CAN-098, Definition
 
-The Human-Capability architecture already provides the main river:
+The Human-Capability architecture provides the main river:
 
 ```text
 Retained Difference
@@ -541,7 +569,8 @@ Retained Difference
 → Opportunity Conversion
 ```
 
-UPCC does not replace this river.
+UPCC does not replace this river. `EQ-002/H.07.v1` supplies the synchronous-delivery readout
+into this same HCA architecture; UPCC supplies the curriculum specialization inside it.
 
 The problem-word-tool-workflow mechanism is absorbed **inside** the river, especially across:
 
@@ -3205,8 +3234,35 @@ FUNCTION UPCC(problem_or_purpose, diagnostic_evidence, target, time):
 
     modality_contract = build_modality_capability_record()
 
+    # 4B. Registered Toledo delivery-domain weld for synchronous videoconference
+    if modality == ONLINE_SYNCHRONOUS:
+        Z_zoom = read_synchronous_learning_state(
+            Access,
+            Mediation,
+            CognitiveRegulation,
+            BodilyAffectiveBurden,
+            RelationalGroup,
+            TeacherOrchestration,
+            PedagogicalTranslation,
+            VerificationAmbiguity,
+            DataPrivacy,
+            StructuralInequality
+        )
+
+        bind canonical_weld = "EQ-002/H.07.v1"  # CAN-1318
+        zoom_barrier_evidence = q_B(Z_zoom)
+
+        # Do not short-circuit the curriculum river:
+        # later UPCC stages instantiate the same HCA stages named by H.07.
+        # Platform traces remain observations, not Human Return.
+
     # 5. Barrier readout
-    B = read_barriers(P_raw, H, K_life)
+    B = read_barriers(
+        P_raw,
+        H,
+        K_life,
+        additional_evidence = zoom_barrier_evidence if modality == ONLINE_SYNCHRONOUS else NONE
+    )
     never infer observed difficulty == skill deficit
 
     # 6. Current framing and words
@@ -3369,18 +3425,28 @@ FUNCTION UPCC(problem_or_purpose, diagnostic_evidence, target, time):
         where_it_fails_or_requires_referral
     )
 
-    # 23. Update premises / human state only to extent warranted
+    # 23. Return conversion / update human state only to extent warranted
     H_next = revise_human_state(
         return_evidence,
         transfer_evidence,
         world_feedback
     )
 
-    # 24. Net advancement
-    record Gain, Loss, Transfer, Ownership, Burden,
-           BarrierChange, OpportunityChange, Provenance, Warrant
+    Delta_H = build_return_conversion_vector(
+        previous_state = H,
+        next_state = H_next,
+        return_evidence = return_evidence,
+        transfer_evidence = transfer_evidence
+    )
 
-    # 25. Institutional access / opportunity conversion
+    # 24. Live possibility field — H.07 continuity
+    L_H_next = compare_live_field(
+        previous_state = H,
+        next_state = H_next,
+        barriers = B
+    )
+
+    # 25. Conversion conditions outside learning itself
     institutional_access = read_access_to(
         verification,
         practice,
@@ -3389,13 +3455,33 @@ FUNCTION UPCC(problem_or_purpose, diagnostic_evidence, target, time):
         supervision
     )
 
-    # 26. Opportunity conversion
-    read what became realistically reachable
+    # 26. Realized opportunity — capability is not yet opportunity
+    Omega_real = read_realized_opportunity(
+        human_return = return_evidence,
+        life_context = K_life,
+        credentials = current_credentials,
+        networks = reachable_networks,
+        permissions = current_permissions,
+        opportunity_context = current_opportunity_context
+    )
 
-    # 27. Correction history / responsible participation trace
+    # 27. Net advancement — terminal H.07 / CAN-106 record
+    A_HCA = record_net_advancement(
+        Gain,
+        Loss,
+        Transfer,
+        Ownership,
+        Burden,
+        BarrierChange,
+        OpportunityChange = Omega_real,
+        Provenance,
+        Warrant
+    )
+
+    # 28. Correction history / responsible participation trace
     update_correction_history()
 
-    # 28. Continue / complete / replan / refer
+    # 29. Continue / complete / replan / refer
     if target evidence sufficient and transfer supported:
         close_course_with(
             retained_knowledge,
