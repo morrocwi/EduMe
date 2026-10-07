@@ -1130,6 +1130,30 @@ HYBRID / MIXED
 
 Do not choose modality from convenience alone.
 
+
+### Registered synchronous-delivery bridge
+
+If the selected modality is `ONLINE_SYNCHRONOUS` group videoconference, use the EduMe-linked
+standalone specification at
+`docs/TOLEDO_ZOOM_GLOBAL_FINAL_STANDALONE_v1_4_EDUME_LINKED.md`.
+
+Its central delivery-domain weld is canonical Toledo
+**`EQ-002/H.07.v1` / `CAN-1318`**:
+
+```text
+synchronous learning state
+→ barrier readout
+→ human-endorsed route
+→ scaffold
+→ unaided Human Return
+→ live possibility
+→ realized opportunity
+→ net advancement
+```
+
+This bridge constrains how the modality is read; it does not make camera state, attendance,
+chat volume, or platform activity equivalent to learning or Human Return.
+
 Ask:
 
 ```text
@@ -1337,6 +1361,11 @@ Certificate wording and public claims should match the highest level actually ev
 ---
 
 ## 8.6 Online Synchronous Profile
+
+**Toledo continuity:** this profile is the production reading of
+`EQ-002/H.07.v1` / `CAN-1318`. Before interpreting synchronous-session evidence, preserve the
+standalone's ten-domain state readout `A–M–C–B–R–J–P–V–D–I` and its non-collapses
+(connection ≠ attendance ≠ participation ≠ understanding ≠ retention ≠ application).
 
 Useful functions:
 
@@ -3780,6 +3809,18 @@ A curriculum about negotiation needs interactive negotiation.
 # 43. Final Course-Production Rule
 
 A curriculum is not complete when all slides are finished.
+
+For `ONLINE_SYNCHRONOUS` delivery, the trace must also be continuous with the registered
+delivery weld:
+
+```text
+Z^Zoom
+→ EQ-002/H.07.v1
+→ Human Return
+→ Live Possibility
+→ Realized Opportunity
+→ A_HCA
+```
 
 It is complete when the designer can trace:
 
