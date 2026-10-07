@@ -2,9 +2,12 @@
 
 **Status: Dr-tier / Open — a readout of the corpus as it stands, not a certified claim. Produced by
 two internal multi-agent research passes over 15 files. No independent
-check has run on this document itself. Nothing here has been registered in Toledo, checked against
-Readout Genesis, or deposited to Zenodo — this is the foundation pass the founder asked for before
-the next stage of development.**
+check has run on this document itself. The UPCC-specific proposal records described below remain
+unregistered and retain their stated Open/Dr status. However, the synchronous-videoconference →
+Human Capability delivery weld now used by EduMe is registered in Toledo as
+`EQ-002/H.07.v1` / `CAN-1318` (current, Definition). This does not promote the remaining UPCC
+proposal objects or certify them against Readout Genesis. No Zenodo deposit has been made for the
+UPCC system itself.**
 
 **Excluded, deliberately:** `02_APPLIED_EXAMPLE/ARAYA_PRIVATE_NIKAH_LEARNING_PATHWAY_v2.0_UPCC.md`
 was never extracted, read, or analyzed in either pass — it is named PRIVATE and out of scope for
@@ -20,7 +23,9 @@ in a human being — a curriculum-design *specialization* of the existing Toledo
 not an independent mathematical universe of its own.
 
 - **Layer 1 — Master architecture** (current: v1.3 `MODALITY_RHYTHM_CLOSURE_STANDALONE`). The
-  conceptual spine: reuses the Toledo HCA "river" wholesale (Retained Difference → Human Readout →
+  conceptual spine: reuses the Toledo HCA "river" wholesale and, when delivery is synchronous
+  group videoconference, enters it through the canonical Toledo weld `EQ-002/H.07.v1` /
+  `CAN-1318`. The HCA river remains (Retained Difference → Human Readout →
   Live Problem → Barrier Readout → Candidate Routes → Human Endorsement → Adaptive Scaffold →
   Practice → Withdrawal → Human Return → Novel Transfer → World Feedback → Opportunity Conversion),
   wraps it in six operational-language word classes, a ten-category barrier taxonomy, adult/child
@@ -58,21 +63,24 @@ rule was written down.
 
 ## 2. Knowledge-graph node set (main.hub card shape)
 
-Five nodes. Full detail (is/is_not/relations) is in `docs/UPCC_KG_NODES.json` in this repo —
+Six nodes. Full detail (is/is_not/relations) is in `docs/UPCC_KG_NODES.json` in this repo —
 condensed here:
 
 | id | class | role | key relations |
 |---|---|---|---|
 | `legacy-upcc-protocol` | lineage-track | Superseded equation-track, v0.1→v0.4 | `superseded-by` → master; `cautionary-precedent-for` → institute-schema-v2 |
 | `upcc-master-architecture` | current-layer | Layer 1, conceptual spine | `operationalized-by` → institute-schema-v2; `reuses` → toledo:CAN-098; `sibling-layer-of` → production-system |
+| `toledo-zoom-hca-standalone` | domain-specialization | Synchronous group-videoconference state/measurement/intervention specification | `canonical-weld` → toledo:EQ-002/H.07.v1; `feeds-delivery-readout-into` → upcc-master-architecture |
 | `upcc-production-system` | current-layer | Layer 2, compiler manual | `consumes-schema-from` → institute-schema-v2; `implements` → master-architecture |
 | `upcc-empirical-falsification-protocol` | current-layer | Layer 3, adversarial testing | `field-chain-extended-by` → institute-schema-v2; `still-unresolved-duplication-with` → master-architecture |
 | `upcc-institute-schema-v2` | bridge-artifact | Layer 4, authoring/data-schema bridge | `operationalizes` → master; `feeds-schema-into` → production; `extends-field-chain-of` → empirical-protocol; `unverified-against` → readout_genesis compatibility check |
 
 ## 3. Open questions / contradictions (not silently resolved)
 
-1. **Genesis-compatibility check has never been run for anything in this corpus** — Toledo reuse
-   discipline only. This is a real gap against the workspace's own `EPIS-REUSE-PIPELINE` two-step
+1. **The UPCC-specific proposal objects still do not have a completed independent
+   Genesis-compatibility certification.** Toledo reuse discipline was run, and the separate
+   synchronous-delivery weld `EQ-002/H.07.v1` has since been admitted to Toledo canonical, but
+   that admission must not be used to promote the unresolved UPCC record proposals. This is a real gap against the workspace's own `EPIS-REUSE-PIPELINE` two-step
    requirement (Toledo *and* Genesis), not something either UPCC pass can close on its own.
 2. Master v1.3's own embedded falsification sections vs. the standalone Empirical Protocol v0.2 —
    supersede / mirror / summarize each other? Unresolved in the source text.
