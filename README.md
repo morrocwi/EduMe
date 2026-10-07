@@ -16,6 +16,33 @@ family, not an independent framework of its own.
 
 Reconciled overview: `docs/UPCC_UNIFIED_SYSTEM.md`. Knowledge-graph node set: `docs/UPCC_KG_NODES.json`.
 
+
+## Synchronous videoconference → Human Capability bridge
+
+For curricula using `ONLINE_SYNCHRONOUS` group videoconference delivery, EduMe now consumes
+`docs/TOLEDO_ZOOM_GLOBAL_FINAL_STANDALONE_v1_4_EDUME_LINKED.md`.
+
+The delivery-domain weld is registered in Toledo as **`EQ-002/H.07.v1` / `CAN-1318`**
+(status `current`, tier `Definition`). It connects the synchronous-learning state to the
+existing HCA river without replacing UPCC or `EQ-002/H.03.v1`:
+
+```text
+Zoom / synchronous learning state
+→ EQ-002/H.07.v1
+→ Barrier Readout
+→ Candidate Routes
+→ Human Endorsement
+→ Adaptive Scaffold
+→ Unaided Human Return
+→ Live Possibility
+→ Realized Opportunity
+→ Net Advancement
+→ UPCC curriculum trace / next action
+```
+
+Only the registered master weld is canonical Toledo. Prediction, intervention, measurement,
+and other domain-specific formulas in the standalone retain their own proposal/evidence status.
+
 ## The actual tool: design a curriculum from this repo
 
 `schema/upcc_curriculum_spine.schema.json` is a 17-field minimal-token subset of Layer 4's schema —
@@ -65,9 +92,11 @@ real (add/remove a config entry, confirm clean state both ways) — see
   stands, not a certified claim. Nothing here should be read as "proven" or "validated."
 - **No independent check has run** on the theory corpus or this document. It has not been through
   this workspace's own maker-checker or adversarial-review discipline.
-- **Not yet registered in Toledo's canonical registry.** Toledo PROPOSAL entries have been drafted
-  and are pending registrar review — see `registry/proposals/upcc_v1_0.json` in the `toledo`
-  repository. Current honest status per object: `SCAFFOLD_CONSTRUCTION_RECORD` is gate-clean
+- **UPCC-specific new record objects are still not registered in Toledo's canonical registry.**
+  Their Toledo PROPOSAL entries remain pending registrar review — see
+  `registry/proposals/upcc_v1_0.json` in the `toledo` repository. Separately, the
+  synchronous-videoconference → HCA delivery weld used by this repo is now canonical Toledo:
+  `EQ-002/H.07.v1` / `CAN-1318`. Current honest status per object: `SCAFFOLD_CONSTRUCTION_RECORD` is gate-clean
   pending *independent* re-verification (self-checked only so far); `CURRICULUM_EVIDENCE_RECORD`
   and `CURRICULUM_TRACEABILITY_RECORD` still fail a real commuting-square check against a
   constructed real-world domain, for specific named reasons; `ROUTE_DEPENDENCY_RECORD` is
