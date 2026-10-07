@@ -46,6 +46,14 @@
           "target": "toledo:EQ-002/H.03.v1 (CAN-098, unverified against live registry)"
         },
         {
+          "type": "uses-delivery-domain-weld-when-online-synchronous",
+          "target": "toledo:EQ-002/H.07.v1 (CAN-1318, current, Definition)"
+        },
+        {
+          "type": "specialized-by",
+          "target": "toledo-zoom-hca-standalone"
+        },
+        {
           "type": "sibling-layer-of",
           "target": "upcc-production-system"
         }
@@ -137,6 +145,35 @@
         {
           "type": "unverified-against",
           "target": "readout_genesis compatibility check"
+        }
+      ]
+    },
+    {
+      "id": "toledo-zoom-hca-standalone",
+      "class": "domain-specialization",
+      "role": "EduMe-linked synchronous group-videoconference learning specification. Preserves the A–M–C–B–R–J–P–V–D–I anchor, empirical/causal validation gates, and connects delivery-state evidence to the Toledo HCA river through canonical EQ-002/H.07.v1 (CAN-1318).",
+      "is": [
+        "the delivery-domain specification for ONLINE_SYNCHRONOUS group videoconference curricula",
+        "empirically stress-tested at the proximal learning/phenomenology level with distal HCA validation gaps explicitly retained",
+        "the document home for the 94-problem synchronous-videoconference map and its measurement/prediction/intervention contracts"
+      ],
+      "is_not": [
+        "a replacement for UPCC Master or the general HCA river",
+        "a claim that all equations in the standalone are canonical Toledo — only explicitly registered Toledo objects such as EQ-002/H.07.v1 are canonical",
+        "a universal numeric predictor or end-to-end validated realized-opportunity model"
+      ],
+      "relations": [
+        {
+          "type": "canonical-weld",
+          "target": "toledo:EQ-002/H.07.v1 (CAN-1318)"
+        },
+        {
+          "type": "feeds-delivery-readout-into",
+          "target": "upcc-master-architecture"
+        },
+        {
+          "type": "implemented-by-modality-profile",
+          "target": "upcc-production-system"
         }
       ]
     }
