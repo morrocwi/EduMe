@@ -34,6 +34,31 @@ No install step, no MCP wiring — this is the path to focus on if you can execu
 3. **Validate** (tier B/D: call the tool/CLI; tier C: self-check the 17 fields against the schema by hand).
 4. **Render** (tier B/D: call the tool/CLI; tier C: substitute into the template by hand).
 
+
+### ONLINE_SYNCHRONOUS bridge rule
+
+If the design uses synchronous **group videoconference** as a meaningful delivery mode, also consult
+`docs/TOLEDO_ZOOM_GLOBAL_FINAL_STANDALONE_v1_4_EDUME_LINKED.md`. The registered Toledo continuity
+object is `EQ-002/H.07.v1` / `CAN-1318`.
+
+Preserve this chain when reasoning about evidence:
+
+```text
+synchronous learning state
+→ barrier readout
+→ candidate route
+→ human endorsement
+→ scaffold
+→ unaided Human Return
+→ live possibility
+→ realized opportunity
+→ net advancement
+```
+
+Do not infer engagement or capability from camera state, attendance, chat volume, or another
+platform trace alone. Do not use the Zoom bridge for face-to-face, asynchronous, field, or other
+modalities unless a synchronous group-videoconference component is actually present.
+
 ## Do NOT read the full theory docs for ordinary requests
 
 Do **not** load `docs/UPCC_MASTER.md` or `docs/UPCC_PRODUCTION_SYSTEM.md` for a normal curriculum-design request — the spine schema above already encodes what an ordinary design needs, and loading those multi-thousand-line docs defeats this skill's minimal-token goal. Only read them when the user explicitly asks for: deep theoretical grounding, a specific extended artifact (e.g. the Tool Abstraction Layer), or a citation back to the underlying UPCC theory.
