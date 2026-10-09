@@ -284,6 +284,103 @@
           "description": "Whether one bounded follow-up touchpoint is needed — blocks open-ended, unbounded follow-up. Elicit: \"Is one later check-in needed, or is this fully self-service after closure?\""
         }
       }
+    },
+    "delivery_mode": {
+      "type": "string",
+      "enum": [
+        "ONLINE_SYNCHRONOUS",
+        "ONLINE_ASYNCHRONOUS",
+        "FACE_TO_FACE",
+        "BLENDED",
+        "FIELD"
+      ],
+      "description": "Optional. Primary delivery mode. ONLINE_SYNCHRONOUS (synchronous group videoconference) makes the toledo_h07 block mandatory and enforced by mcp/server.py validate_design. Values are exact, upper-case."
+    },
+    "toledo_h07": {
+      "type": "object",
+      "required": [
+        "stages"
+      ],
+      "additionalProperties": false,
+      "description": "Optional; required (and only allowed) when delivery_mode is ONLINE_SYNCHRONOUS. Design descriptions and evidence plans for the 9 ordered states of Toledo EQ-002/H.07.v1 (CAN-1318, tier Definition = composition, not a proved or validated causal law). Descriptions only: no numbers, probabilities, scores or predicted learner outcomes. Rules beyond JSON Schema (order, forbidden inferences, endorser, assistance) are enforced heuristically by mcp/server.py validate_design.",
+      "properties": {
+        "stages": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "description": "Exactly 9 stages in canonical order: ZoomState -> Barrier -> CandidateRoute -> LiveRoute -> HumanReturn -> ReturnDelta -> LiveField -> RealizedOpportunity -> NetAdvancement.",
+          "items": {
+            "type": "object",
+            "required": [
+              "stage",
+              "design"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "ZoomState",
+                  "Barrier",
+                  "CandidateRoute",
+                  "LiveRoute",
+                  "HumanReturn",
+                  "ReturnDelta",
+                  "LiveField",
+                  "RealizedOpportunity",
+                  "NetAdvancement"
+                ]
+              },
+              "design": {
+                "type": "string",
+                "description": "How this state is designed/read in this course (description, not a number)."
+              },
+              "evidence_basis": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "camera_on",
+                    "attendance",
+                    "session_duration",
+                    "chat_volume",
+                    "poll_response",
+                    "unaided_task_performance",
+                    "delayed_unaided_task",
+                    "work_product_review",
+                    "human_observation",
+                    "learner_reflection_record",
+                    "other_documented_evidence"
+                  ]
+                },
+                "description": "Kinds of evidence planned. camera_on/attendance/session_duration/chat_volume/poll_response are platform traces: allowed for ZoomState and Barrier only; on every other stage trace-only evidence (or a plan that mentions traces without a performance-type kind) is rejected by mcp/server.py. Required for HumanReturn, ReturnDelta, RealizedOpportunity, NetAdvancement, and on those four it must include a performance-type kind: unaided_task_performance, delayed_unaided_task, work_product_review or human_observation."
+              },
+              "evidence_plan": {
+                "type": "string",
+                "description": "Prose plan for how the evidence will be gathered."
+              },
+              "endorser": {
+                "type": "string",
+                "enum": [
+                  "human_learner",
+                  "human_instructor",
+                  "human_peer",
+                  "human_other"
+                ],
+                "description": "LiveRoute only, required there: the human who chooses the route. An AI/system suggestion is not a human choice."
+              },
+              "assistance_condition": {
+                "type": "string",
+                "enum": [
+                  "unassisted",
+                  "assisted"
+                ],
+                "description": "HumanReturn only, required there: must be unassisted; assisted performance is not unaided Human Return."
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,0 +1,165 @@
+{
+  "delivery_mode": "ONLINE_SYNCHRONOUS",
+  "course": {
+    "identity": {
+      "title": "Reading a Seed Packet: Live Online Workshop for Community Gardeners"
+    },
+    "claim": "Participants can choose which seeds to sow this month for their own plot by reading a seed packet and a local planting calendar.",
+    "non_claims": "Does not certify horticultural expertise, soil testing, pest diagnosis or commercial growing."
+  },
+  "live_problem": {
+    "situation": "New community gardeners sow seeds at the wrong time or depth because they do not know how to read the information on a seed packet, and then lose a season.",
+    "purpose": "A gardener can look at any seed packet and a planting calendar and decide, with reasons, whether to sow now, wait, or choose another seed."
+  },
+  "learner": {
+    "prior_knowledge": "Has a plot or a balcony container and has bought seeds before; has never used a planting calendar.",
+    "barriers": "Works in the evenings and can only attend by videoconference from home; some have small screens and unstable connections; some feel shy about asking questions in front of a group."
+  },
+  "framing": {
+    "working_words": [
+      {
+        "term": "sow-now test",
+        "opens": [
+          "a packet is a set of conditions to compare with today, not a recipe to follow blindly"
+        ],
+        "changed_questions": [
+          "do today's conditions match what this packet asks for?"
+        ]
+      }
+    ]
+  },
+  "routes": [
+    {
+      "question": "Should I sow this seed now?",
+      "domain": "home_gardening",
+      "tool_function": "seed_packet_and_calendar_comparison",
+      "workflow": "read_packet -> read_calendar -> compare_conditions -> decide_sow_wait_or_swap -> note_reason",
+      "criteria": "decision and stated reason agree with the packet conditions and the local calendar",
+      "skill": "packet_to_calendar_matching"
+    }
+  ],
+  "capability": {
+    "overall": "Gardener can decide, with a stated reason, whether to sow a given seed now.",
+    "human_return": "Some weeks later, shown a packet not seen in the workshop and a calendar, the gardener decides sow, wait or swap and gives the reason, without help from the instructor, a peer or an AI tool."
+  },
+  "content": {
+    "must_know": "The parts of a seed packet (sowing window, depth, spacing, days to emerge) and how a planting calendar is read.",
+    "must_do": "Compare at least two real packets from their own collection against the calendar and record a decision for each."
+  },
+  "sessions": [
+    {
+      "id": "S1",
+      "minutes": 60,
+      "capability_target": "read_packet_conditions",
+      "learner_action": "In the live session, each participant reads their own packet aloud in small breakout rooms and lists its conditions.",
+      "artifact": "a one-page condition list per packet",
+      "evidence": "condition list reviewed by the instructor after the session"
+    },
+    {
+      "id": "S2",
+      "minutes": 60,
+      "capability_target": "decide_sow_wait_or_swap",
+      "learner_action": "Participants compare their packets with the calendar and post a decision with a reason.",
+      "artifact": "decision note per packet",
+      "evidence": "decision note reviewed against the calendar"
+    }
+  ],
+  "assessment": {
+    "claim": "Gardener can decide sow, wait or swap for an unseen packet.",
+    "task": "Given a new packet and the calendar, produce a decision note.",
+    "observation": "The decision and the stated reason in the note.",
+    "criteria": "The decision agrees with the packet conditions and the calendar, and the reason cites the matching condition.",
+    "warrant": "Giving a correct decision with the right reason on an unseen packet is the operational definition of reading a packet for a sowing decision in this course.",
+    "assistance_condition": "unassisted — the calendar may be used since gardeners will always have it; no instructor, peer or AI help during the task."
+  },
+  "support": {
+    "closure_pack": [
+      "one-page packet-reading guide",
+      "local planting calendar"
+    ],
+    "single_return_if_needed": true
+  },
+  "toledo_h07": {
+    "stages": [
+      {
+        "stage": "ZoomState",
+        "design": "The instructor reads the live session state from what participants say and show in the breakout rooms and the main room, including who is joining by small screen or weak connection.",
+        "evidence_basis": [
+          "camera_on",
+          "chat_volume",
+          "human_observation"
+        ],
+        "evidence_plan": "Instructor notes per breakout room; camera and chat traces are used only as hints about session state, never as proof of learning."
+      },
+      {
+        "stage": "Barrier",
+        "design": "Barriers are written down in plain words per participant: unclear packet vocabulary, small screen, unstable connection, shyness in the main room.",
+        "evidence_basis": [
+          "poll_response",
+          "learner_reflection_record"
+        ],
+        "evidence_plan": "A short opening poll plus a one-line written reflection from each participant on what is hard for them today."
+      },
+      {
+        "stage": "CandidateRoute",
+        "design": "Candidate routes for each barrier are listed, for example a private chat question instead of speaking, a screenshot of the packet, or a pre-read vocabulary card.",
+        "evidence_basis": [
+          "human_observation"
+        ],
+        "evidence_plan": "The instructor lists two or three options per barrier before offering them."
+      },
+      {
+        "stage": "LiveRoute",
+        "design": "Each participant, or the instructor on their behalf after asking them, picks the route that will actually be used in the session.",
+        "evidence_basis": [
+          "learner_reflection_record"
+        ],
+        "evidence_plan": "The choice is recorded in the participant's own words.",
+        "endorser": "human_learner"
+      },
+      {
+        "stage": "HumanReturn",
+        "design": "Scaffolds such as the vocabulary card are faded; the participant later decides on an unseen packet without any help.",
+        "evidence_basis": [
+          "delayed_unaided_task"
+        ],
+        "evidence_plan": "A delayed task a few weeks later with an unseen packet, done alone; the decision note is the evidence.",
+        "assistance_condition": "unassisted"
+      },
+      {
+        "stage": "ReturnDelta",
+        "design": "The change is described as what the participant can now do alone compared with their opening reflection, in words.",
+        "evidence_basis": [
+          "work_product_review",
+          "learner_reflection_record"
+        ],
+        "evidence_plan": "Compare the opening reflection with the delayed decision note and describe the difference in prose."
+      },
+      {
+        "stage": "LiveField",
+        "design": "Describe what options are now genuinely open to the participant: seeds they can choose, sowing windows they can read, people they can ask.",
+        "evidence_basis": [
+          "learner_reflection_record"
+        ],
+        "evidence_plan": "A short follow-up conversation in which the participant names the choices they now see for their plot."
+      },
+      {
+        "stage": "RealizedOpportunity",
+        "design": "Record which of those open options the participant actually used on their own plot.",
+        "evidence_basis": [
+          "work_product_review"
+        ],
+        "evidence_plan": "The participant shares a plot photo or planting log entry showing a seed they chose and sowed using the packet-reading method."
+      },
+      {
+        "stage": "NetAdvancement",
+        "design": "Record in words the net change for the participant after the course, including any cost or burden it brought, such as time spent in the evenings.",
+        "evidence_basis": [
+          "learner_reflection_record",
+          "human_observation"
+        ],
+        "evidence_plan": "A closing conversation noting what advanced, what stayed the same and what got harder."
+      }
+    ]
+  }
+}

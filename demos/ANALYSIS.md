@@ -77,3 +77,13 @@ online/offline and short/long shapes** — demonstrated by 4 actually-executed v
 trips, including 3 that started broken and were only fixed after genuine tool feedback. **No, this
 does not demonstrate pedagogical correctness, learner outcomes, or the tier-C no-code-execution
 path** — those remain explicitly open, not silently claimed.
+
+## Addendum: demo5 (synchronous group videoconference)
+
+`demo5_zoom_seed_packet.json` is a fictional, generic course that uses `delivery_mode:
+"ONLINE_SYNCHRONOUS"` and the optional `toledo_h07` block (Toledo EQ-002/H.07.v1, CAN-1318, tier
+Definition: a composition, not a proved or validated causal law). It validates with no errors or
+warnings and renders all nine stages in canonical order. Like demos 1-4, this shows structural
+completeness only. The forbidden-inference checks (platform-trace-only evidence, AI endorser,
+assisted HumanReturn) are heuristic keyword/enum matching; unaided return, live possibility and
+realized opportunity remain NOT_YET_DIRECTLY_VALIDATED, and nothing here predicts a learner outcome.

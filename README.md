@@ -27,18 +27,14 @@ The delivery-domain weld is registered in Toledo as **`EQ-002/H.07.v1` / `CAN-13
 existing HCA river without replacing UPCC or `EQ-002/H.03.v1`:
 
 ```text
-Zoom / synchronous learning state
-→ EQ-002/H.07.v1
-→ Barrier Readout
-→ Candidate Routes
-→ Human Endorsement
-→ Adaptive Scaffold
-→ Unaided Human Return
-→ Live Possibility
-→ Realized Opportunity
-→ Net Advancement
-→ UPCC curriculum trace / next action
+ZoomState --q_B--> Barrier --u*_{diag}--> CandidateRoute --Endorse_i--> LiveRoute --pi*_{scaffold}--> HumanReturn
+  --Retention--> ReturnDelta --LiveField--> LiveField --G_O--> RealizedOpportunity --Record--> NetAdvancement
 ```
+
+That is the canonical chain: 9 states, 8 maps. `EQ-002/H.07.v1` is a Definition (a composition),
+not a proved or validated causal law. The design tool enforces it for `delivery_mode:
+"ONLINE_SYNCHRONOUS"` curricula (the `toledo_h07` block is required when `delivery_mode` is `ONLINE_SYNCHRONOUS`; heuristic checks, see the Skill);
+see `demos/demo5_zoom_seed_packet.json`.
 
 Only the registered master weld is canonical Toledo. Prediction, intervention, measurement,
 and other domain-specific formulas in the standalone retain their own proposal/evidence status.
@@ -78,13 +74,12 @@ API/MCP layer is a sub-resource the Skill may call when available — never a ha
 
 ### Proof this actually works, not just a design
 
-`demos/` contains 4 real test curricula — spanning online/offline × short/long, run through the
+`demos/` contains 5 test curricula (demos 1-4 are real-world problems spanning online/offline × short/long; demo5 is a fictional synchronous-videoconference course), run through the
 actual `mcp/server.py` CLI, not hand-simulated — plus `demos/ANALYSIS.md`, an honest writeup
 including two real implementation bugs the testing found and fixed (a duplicate-validation bug and
 a template-substitution bug that leaked documentation text into the rendered output), and what the
 demo does and does not prove. Install/uninstall of the MCP server registration was also verified for
-real (add/remove a config entry, confirm clean state both ways) — see
-`_intake/HANDOFF_UPCC_ultracode_2026-09-20.md` for the session record.
+real (add/remove a config entry, confirm clean state both ways).
 
 ## Status — read this before relying on anything here
 
@@ -106,8 +101,8 @@ real (add/remove a config entry, confirm clean state both ways) — see
 - **No Readout Genesis compatibility certification** exists beyond this session's own Dr-tier
   formalization attempt; the honest result for every new object is "open, not closed."
 - **No Zenodo deposit** has been made for this system.
-- **The curriculum-design tool** (schema + template + `mcp/server.py`) has been tested against 4
-  real demo curricula and works structurally — see `demos/ANALYSIS.md` for exactly what that does
+- **The curriculum-design tool** (schema + template + `mcp/server.py`) has been tested against 5
+  demo curricula (4 real-world problems plus 1 fictional synchronous-videoconference course) and works structurally — see `demos/ANALYSIS.md` for exactly what that does
   and does not prove (structural completeness, not pedagogical correctness or learner outcomes).
 
 ## What this repo does NOT contain

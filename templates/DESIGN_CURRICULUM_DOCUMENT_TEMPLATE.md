@@ -6,6 +6,9 @@ Field paths below match the spine schema exactly (10 top-level keys, 17 spine fi
 as "[NOT YET SPECIFIED]" by the renderer, never silently dropped. Repeatable sections (routes,
 sessions, framing.working_words) render one block per array item; an empty/missing required array
 renders a single "[NOT YET SPECIFIED — no entries provided]" line instead of a blank section.
+An if-block (if path ... end-if, same double-brace syntax as above) is kept only when `path` is non-empty;
+section 11 (ONLINE_SYNCHRONOUS / Toledo EQ-002/H.07.v1) uses it, so designs without that block render
+unchanged.
 -->
 
 > **Document status: Dr-tier design artifact — not a certified or accredited curriculum.**
@@ -113,6 +116,43 @@ commitment — state its actual terms above, don't imply more availability than 
 
 ---
 
+{{#if toledo_h07}}## 11. Synchronous Videoconference Delivery — Toledo EQ-002/H.07.v1
+
+**Toledo EQ-002/H.07.v1 (CAN-1318) — Definition (composition), not a proved or validated causal law**
+
+Delivery mode: {{delivery_mode}}
+
+This course includes synchronous group videoconference delivery. The nine states below are the
+canonical chain of the registered Toledo object; each row records how this design describes that
+state and what evidence is planned. Descriptions and evidence plans only — no numbers,
+probabilities, scores or predicted learner outcomes.
+
+```text
+ZoomState --q_B--> Barrier --u*_{diag}--> CandidateRoute --Endorse_i--> LiveRoute --pi*_{scaffold}--> HumanReturn
+  --Retention--> ReturnDelta --LiveField--> LiveField --G_O--> RealizedOpportunity --Record--> NetAdvancement
+```
+
+| Stage | Design | Evidence basis | Evidence plan | Endorser | Assistance condition |
+|---|---|---|---|---|---|
+{{#each toledo_h07.stages}}| {{this.stage}} | {{this.design}} | {{this.evidence_basis}} | {{this.evidence_plan}} | {{this.endorser}} | {{this.assistance_condition}} |
+{{/each}}
+**Caveats (read before relying on this section):**
+
+- Unaided return, live possibility and realized opportunity are NOT_YET_DIRECTLY_VALIDATED in the
+  linked standalone (docs/TOLEDO_ZOOM_GLOBAL_FINAL_STANDALONE_v1_4_EDUME_LINKED.md, section 44AH).
+- raw_row_independent_replication: not_yet_completed. universal_causal_validation: false.
+- Camera-on, attendance/duration, chat volume and poll response are platform traces. They may inform
+  ZoomState and Barrier only: trace-only evidence is rejected on every other stage. HumanReturn,
+  ReturnDelta, RealizedOpportunity and NetAdvancement also need a performance-type evidence kind
+  (unaided task performance, delayed unaided task, work product review or human observation).
+- An AI suggestion is not a human choice: the LiveRoute is endorsed by a human. Assisted
+  performance is not unaided HumanReturn.
+- Parent Toledo objects reused, not restated: EQ-002/H.03.v1, A.5/H.17.v1, EQ-015/H.32.v1 (tier
+  Open), A.5/H.18.v1, A.8/H.03.v1. The keyword and enum checks that guard this section are heuristic.
+
+---
+
+{{/if}}
 *Generated against UPCC v2.0 spine schema. This is a minimal-token spine design — extended
 fields (target group, modality, duration, learner experiential-capital detail, tool-abstraction
 contracts, rhythm/activity-demand profile, alignment map) are deliberately deferred; ask for them
