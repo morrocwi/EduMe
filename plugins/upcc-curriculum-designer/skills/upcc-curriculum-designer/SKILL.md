@@ -16,7 +16,7 @@ description: Design a UPCC-based course curriculum from a live-problem descripti
 ```
 python3 server.py schema                # print the spine JSON Schema
 python3 server.py template               # print the document template
-python3 server.py validate design.json   # {valid, missing_required, warnings}
+python3 server.py validate design.json   # {valid, missing_required, errors, warnings}
 python3 server.py render design.json     # the rendered Design Curriculum Document
 ```
 No install step, no MCP wiring — this is the path to focus on if you can execute Python but aren't a tool-calling agent.
@@ -35,29 +35,44 @@ No install step, no MCP wiring — this is the path to focus on if you can execu
 4. **Render** (tier B/D: call the tool/CLI; tier C: substitute into the template by hand).
 
 
-### ONLINE_SYNCHRONOUS bridge rule
+### ONLINE_SYNCHRONOUS bridge rule (Toledo EQ-002/H.07.v1, CAN-1318)
 
-If the design uses synchronous **group videoconference** as a meaningful delivery mode, also consult
-`docs/TOLEDO_ZOOM_GLOBAL_FINAL_STANDALONE_v1_4_EDUME_LINKED.md`. The registered Toledo continuity
-object is `EQ-002/H.07.v1` / `CAN-1318`.
+Use this ONLY when synchronous **group videoconference** is actually part of the delivery. Do not use it for face-to-face, asynchronous, field or other modalities.
 
-Preserve this chain when reasoning about evidence:
+**Tier:** `EQ-002/H.07.v1` is registered in Toledo at tier **Definition** — a composition of maps, not a proved or validated causal law. In the linked standalone (`docs/TOLEDO_ZOOM_GLOBAL_FINAL_STANDALONE_v1_4_EDUME_LINKED.md`) unaided return, live possibility and realized opportunity are `NOT_YET_DIRECTLY_VALIDATED` (section 44AH); the header `empirical_status` block states `raw_row_independent_replication: not_yet_completed` and `universal_causal_validation: false`. The designer records a *design*; it never predicts a learner outcome and never carries numbers, probabilities, scores or "human potential" fields in this block.
+
+**Canonical chain (9 states, 8 maps; use these names verbatim):**
 
 ```text
-synchronous learning state
-→ barrier readout
-→ candidate route
-→ human endorsement
-→ scaffold
-→ unaided Human Return
-→ live possibility
-→ realized opportunity
-→ net advancement
+ZoomState --q_B--> Barrier --u*_{diag}--> CandidateRoute --Endorse_i--> LiveRoute --pi*_{scaffold}--> HumanReturn
+  --Retention--> ReturnDelta --LiveField--> LiveField --G_O--> RealizedOpportunity --Record--> NetAdvancement
 ```
 
-Do not infer engagement or capability from camera state, attendance, chat volume, or another
-platform trace alone. Do not use the Zoom bridge for face-to-face, asynchronous, field, or other
-modalities unless a synchronous group-videoconference component is actually present.
+Set `delivery_mode: "ONLINE_SYNCHRONOUS"` (exact, upper-case) and fill `toledo_h07.stages` with all 9 stages in this order, each with `stage` and `design` (a description). Elicit one question per stage, and only when synchronous group videoconference is present:
+
+1. **ZoomState** — What does the live session look like (who joins how, what is shown or said)? How will you read it?
+2. **Barrier** — What is getting in each participant's way in the session right now, and how will you find out?
+3. **CandidateRoute** — For each barrier, which routes could be offered?
+4. **LiveRoute** — Which route does a *human* actually choose (set `endorser`: `human_learner`, `human_instructor`, `human_peer` or `human_other`)?
+5. **HumanReturn** — With scaffolds removed, what does the participant do alone, later? (set `assistance_condition: "unassisted"`; give `evidence_basis`.)
+6. **ReturnDelta** — In words, what changed in what they can do alone, and how retained?
+7. **LiveField** — In words, what options are now genuinely open to them?
+8. **RealizedOpportunity** — Which of those options did they actually use?
+9. **NetAdvancement** — In words, what is the net change, including burden or cost?
+
+`evidence_basis` values: platform traces `camera_on`, `attendance`, `session_duration`, `chat_volume`, `poll_response`; and genuine kinds `unaided_task_performance`, `delayed_unaided_task`, `work_product_review`, `human_observation`, `learner_reflection_record`, `other_documented_evidence`.
+
+**Forbidden inferences (the validator rejects these with `valid: false`):**
+
+- On any stage other than ZoomState and Barrier: `evidence_basis` made only of platform traces (camera-on, attendance/duration, chat volume, poll response), or an `evidence_plan` that mentions such traces while `evidence_basis` has no performance-type kind. These traces are allowed for ZoomState and Barrier only.
+- On HumanReturn, ReturnDelta, RealizedOpportunity and NetAdvancement: no `evidence_basis`, or one without a performance-type kind (`unaided_task_performance`, `delayed_unaided_task`, `work_product_review`, `human_observation`). Reflection or other documented evidence alone does not pass.
+- A LiveRoute endorsed by an AI/system. An AI suggestion is not a human choice.
+- HumanReturn evidence under an "assisted" condition. Assisted performance is not unaided Human Return (consistent with `assessment.assistance_condition`).
+- `toledo_h07` with a non-synchronous or missing `delivery_mode`; missing, duplicated or reordered stages; numeric fields.
+
+**These checks are heuristic** — keyword and enum matching on what the designer wrote (see `mcp/server.py`). A pass means "no listed pattern was found", not "the evidence is adequate"; a human reviewer still decides.
+
+Parents reused (cite, do not restate): `EQ-002/H.03.v1`, `A.5/H.17.v1`, `EQ-015/H.32.v1` (tier Open), `A.5/H.18.v1`, `A.8/H.03.v1`. Do not add a new equation here; any other formula must be labelled "NEW DERIVATION / PROPOSAL — not yet in Toledo". See `demos/demo5_zoom_seed_packet.json` for a worked example.
 
 ## Do NOT read the full theory docs for ordinary requests
 
@@ -71,9 +86,9 @@ Do **not** load `docs/UPCC_MASTER.md` or `docs/UPCC_PRODUCTION_SYSTEM.md` for a 
 > ## Course: Safe-Batch Decision Training
 > **Claim:** This course enables a vendor to decide, unassisted, whether today's batch is safe to sell, using a pH reading against a published threshold — not to formulate or certify the product...
 
-See `demos/` in this repo for four full worked examples (online/offline × short/long) with their actual rendered output.
+See `demos/` in this repo for five full worked examples (four online/offline × short/long, plus one synchronous-videoconference design) with their actual rendered output.
 
 ## Status
 
-Dr-tier design tool. Validated against 4 test curricula, 2 real bugs found and fixed during that
+Dr-tier design tool. Validated against 5 test curricula, 2 real bugs found and fixed during that
 testing (see `demos/ANALYSIS.md`). Not independently reviewed by anyone other than this session.
